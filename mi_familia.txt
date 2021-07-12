@@ -1,0 +1,3 @@
+{'nombre': 'carlos', 'apellido': ' perez', 'edad': ' 50', 'enfermedades': [' 12345'], 'medicamentos': [' dolor', 'hambre', 'suenno']}
+{'nombre': 'maria', 'apellido': ' alfaro', 'edad': ' 50', 'enfermedades': [' 313151'], 'medicamentos': [' hambre', 'dolor', 'frio']}
+{'nombre': 'luis', 'apellido': ' perez', 'edad': ' 10', 'enfermedades': [' 98745654'], 'medicamentos': [' calor', 'sed']}
