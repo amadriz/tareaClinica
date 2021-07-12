@@ -21,7 +21,7 @@
 pacientes = []
 # #Loop Para ingresar los datos a la lista enfermedades[]
 while True:
-    datos = input(f'Ingrese Cedula, Nombre, Apellido, Telefono y Direccion, digite letra end al finalizar')
+    datos = input(f'Ingrese Cedula, Nombre, Apellido, Telefono y Direccion, con la palabra "end" al finalizar')
     if str.lower(datos) == "end":
         break
     pacientes.append(datos)
@@ -32,7 +32,10 @@ while True:
             arch_pacientes.write(paciente)
             arch_pacientes.write(",")
 
-    listaEnfermedades = list(pacientes)
+# Se genera la lista de los pacientes
+listaPacientes = list(pacientes)
+
+print(f'Lista de pacientes:{listaPacientes}')
 
 # ***SECCION ENFERMEDADES**
 
@@ -40,7 +43,7 @@ enfermedades = []
 
 #Loop Para ingresar los datos a la lista enfermedades[]
 while True:
-    enfermedad = input(f'Ingrese enfermedad tratada, con la letra q finaliza la lista')
+    enfermedad = input(f'Ingrese enfermedad tratada, con la palabra "end" finaliza la lista')
     if str.lower(enfermedad) == "end":
         break
     enfermedades.append(enfermedad)
@@ -62,7 +65,7 @@ print(f'Lista de enfermedades paciente:{listaEnfermedades}')
 medicamentos = []
 #Loop Para ingresar los datos a la lista medicamentos
 while True:
-    medicamento = input(f'Ingrese medicamento, con la letra q finaliza la lista')
+    medicamento = input(f'Ingrese medicamento, ccon la palabra "end" finaliza la lista')
     if str.lower(medicamento) == "end":
         break
     medicamentos.append(medicamento)
