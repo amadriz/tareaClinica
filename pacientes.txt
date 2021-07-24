@@ -1,1 +1,7 @@
-111010540,Allan,Madriz,60501827,Heredia,
+11090,Caro,Gonzalez,504039,Alajuela,enf2,med2
+34566,Karina,Gonzalez,5948372,Tibas,enf3,med3
+456,Nombre1,apellido1,tel1,dir1,enferme1,medica1
+1561,abadf45,asdfasd,64654,asdf,asdf,ads
+123154,asdf,asd,asfd,asdf,adf,asf
+,,,,,,
+,,,,,,

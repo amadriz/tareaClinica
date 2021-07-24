@@ -15,81 +15,59 @@
 #     for paciente in pacientes:
 #         arch_pacientes.write(paciente)
 #         arch_pacientes.write("\n")
-
+import csv
 # ***PACIENTE**
-
-pacientes = []
 # #Loop Para ingresar los datos a la lista enfermedades[]
+pacientes = []
+# # cedula = (int(input(f'Ingrese su identificacion sin guiones')))
+# # nombre = input(f'Ingrese su nombre')
+# # apellido = input(f'Ingrese su apellido')
+# # telefono = input(f'Ingrese su numero de telefono')
+# # direccion = input(f'Ingrese su direccion')
 while True:
-    datos = input(f'Ingrese Cedula, Nombre, Apellido, Telefono y Direccion, con la palabra "end" al finalizar')
-    if str.lower(datos) == "end":
-        break
-    pacientes.append(datos)
-
-    # Loop para escribir en el archivo la enferemedades
-    with open('pacientes.txt', 'w') as arch_pacientes:
-        for paciente in pacientes:
-            arch_pacientes.write(paciente)
-            arch_pacientes.write(",")
+    cedula = input(f'Ingrese la Cedula')
+    nombre = input(f'Ingrese su nombre')
+    apellido = input(f'Ingrese su apellido')
+    telefono = input(f'Ingrese su numero telefonico')
+    direccion = input(f'Ingrese la direccion')
+    enfermedad = input(f'Ingrese enfermedad tratada')
+    medicamento = input(f'Ingrese medicamento')
+    end = input(f'Ecriba end para terminar')
+    pacientes.append([cedula, nombre, apellido, telefono, direccion, enfermedad, medicamento])
+    with open('pacientes.txt', mode='a', newline='') as arch_pacientes:
+        writer = csv.writer(arch_pacientes)
+        writer.writerows(pacientes)
+        if end == end:
+            break
 
 # Se genera la lista de los pacientes
 listaPacientes = list(pacientes)
 
 print(f'Lista de pacientes:{listaPacientes}')
 
-# ***SECCION ENFERMEDADES**
+##Leer archivo
+def leer_datos():
+    with open('pacientes.txt', mode='r') as f:
+        reader = csv.reader(f)
+        for i in reader:
+            print(i)
 
-enfermedades = []
 
-#Loop Para ingresar los datos a la lista enfermedades[]
-while True:
-    enfermedad = input(f'Ingrese enfermedad tratada, con la palabra "end" finaliza la lista')
-    if str.lower(enfermedad) == "end":
-        break
-    enfermedades.append(enfermedad)
-#Loop para escribir en el archivo la enferemedades
-with open('enfermedades.txt', 'w') as arch_enfermedades:
-    for enfermedad in enfermedades:
-        arch_enfermedades.write(enfermedad)
-        arch_enfermedades.write("\n")
+##MéTODO PARA ELIMINAR PACIENTE
+lines = []
 
-listaEnfermedades = list(enfermedades)
+def delete():
+    borrar = input(f'Escriba el paciente que desea eliminar')
+    with open('pacientes.txt', mode='r') as r:
+        reader = csv.reader(r)
+        for row in reader:
+            lines.append(row)
+            for field in row:
+                if field == borrar:
+                    lines.remove(row)
+    with open('pacientes.txt', mode='w', newline='') as w:
+        writer = csv.writer(w)
+        writer.writerows(lines)
 
-# with open('enfermedades.txt') as mi_archivo:
-# enfermedades = mi_archivo.readlines()
+delete()
 
-print(f'Lista de enfermedades paciente:{listaEnfermedades}')
-
-# ***SECCION MEDICAMENTOS**
-
-medicamentos = []
-#Loop Para ingresar los datos a la lista medicamentos
-while True:
-    medicamento = input(f'Ingrese medicamento, ccon la palabra "end" finaliza la lista')
-    if str.lower(medicamento) == "end":
-        break
-    medicamentos.append(medicamento)
-
-#Lopp para escribir en el archivo la medicamentos
-
-with open('medicamentos.txt', 'w') as arch_medicamento:
-    for medicamento in medicamentos:
-        arch_medicamento.write(medicamento)
-        arch_medicamento.write('\n')
-
-listaMedicamentos = list(medicamentos)
-
-print(f'Lista de medicamentos pacientes:{listaMedicamentos}')
-#
-#
-#
-#
-# cedula = (int(input(f'Ingrese su identificacion sin guiones')))
-# nombre = input(f'Ingrese su nombre')
-# apellido = input(f'Ingrese su apellido')
-# telefono = input(f'Ingrese su numero de telefono')
-# direccion = input(f'Ingrese su direccion')
-
-#
-#
-# print(cedula, nombre, apellido, telefono, direccion, listaEnferm, listaMed)
